@@ -1,292 +1,348 @@
 <!DOCTYPE html>
-<html>
-<title>Andy Low's Portfolio Website </title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
-}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+    <title>Andy's Low Portfolio Website</title>
 
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('parallax1.jpg');
-  min-height: 100%;
-}
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="src/style.css" />
+    <link rel="stylesheet" href="src/mobile-style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url("parallax2.jpg");
-  min-height: 400px;
-}
+  </head>
 
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("parallax3.jpg");
-  min-height: 400px;
-}
+  <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </button>
+    <script>
+      var mybutton = document.getElementById("myBtn");
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
-</style>
-<body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#projects" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PROJECTS</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-    </a>
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#projects" class="w3-bar-item w3-button" onclick="toggleFunction()">PROJECTS</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
-  </div>
-</div>
-
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MY <span class="w3-hide-small">WEBSITE</span> LOGO</span>
-  </div>
-</div>
-
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>A Year 4 NUS Economics and Business Analytics undergraduate.</em></p>
-  <p>I am passionate for Data Science and plan to pursue work in the Data Science field in the future. Due to my passion, I have embarked on several
-      internships related to Data Science. My goal is to pursue a Masters degree related to Data Science or Artificial Intelligence in the near future. 
-      This website will be used to store my portofolio and my past projects. Thank you! </p>
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>Andy Low Wei Liang</b></p><br>
-      <!-- <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333"> -->
-      <img src="photo.jpg" alt="Photo of Me" width="400" height="300">
-    </div>
-
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p><h1>Work Experiences</h1></p>
-        <p> <b>Unilever</b> - Data Science Intern (Aug 2021-Dec 2021) </p>
-        <p> <b>Infineon Technologies</b> - Machine Learning Intern     (May 2021-Aug 2021) </p>
-        <p> <b>Infocomm Media Development Authority(IMDA)</b> - Machine Learning Intern(Nov 2020-Feb 2021) </p>
-        <p> <b>Lazada</b> - Data Analyst Intern(Aug 2020-Nov 2020)</p>
-    </div>
-  </div>
-  <p class="w3-large w3-center w3-padding-16">Programming Languages that I know:</p>
-  <p class="w3-large"> Java, Python, R-Programming, SQL</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
-  </div>
-  <p class="w3-large"> JavaScript, HTML, CSS, NOSQL</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:50%">50%</div>
-  </div>
-  <p class="w3-large"> MATLAB, C++</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:30%">30%</div>
-  </div>
-</div>
-
-<div class="w3-row w3-center w3-dark-grey w3-padding-16">
-  <div class="w3-center w3-section">
-    <span class="w3-xlarge">4</span><br>
-    Projects Done
-  </div>
-</div>
-
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">PROJECTS</span>
-  </div>
-</div>
-
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="projects">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest projects.<br> Click on the images to make them bigger</em></p><br>
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="usdjpy.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="USD/JYP Forecasting">
-      <a href="https://github.com/andylow1704/usd_jpy_forecasting"> USD/JYP Forecasting </a>
-    </div>
-
-    <div class="w3-col m3">
-      <img src="stocks.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Stock Price Prediction">
-      <a href="https://github.com/andylow1704/Stock_Price_Prediction"> Stock Price Prediction </a>
-    </div>
-
-    <div class="w3-col m3">
-      <img src="creditrisk.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Credit Risk Prediction">
-      <a href="https://github.com/andylow1704/Credit_Risk_Prediction"> Credit Risk Prediction </a>
-    </div>
-  </div>
-
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="adversarial.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Adversarial Attack on Object Detection Model">
-      <a href="https://github.com/andylow1704/Adversarial_Attack"> Adversarial Attack on Objection Detection Model </a>
-    </div>
-    
-   <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="BrainTumor.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Brain Tumor Detection">
-      <a href="https://github.com/andylow1704/BrainTumorDetection"> Brain Tumor Detection </a>
-    </div>
-
-    <!-- <div class="w3-col m3">
-      <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-    </div>
-
-     <div class="w3-col m3">
-      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Hidden Markov Model">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
-  </div>-->
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">WHERE I WORK</h3>
-  <p class="w3-center"><em>I'd love your feedback!</em></p>
-
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <img src="lonly.jpg" class="w3-image w3-round" style="width:100%">
-    </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Singapore, SG<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +65 9070 3655<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: andylow1704@gmail.com<br>
-        <i class="fa fa-github w3-hover-text-black w3-xlarge w3-margin-right"></i>  Github: <a href = "https://github.com/andylow1704">https://github.com/andylow1704</a> <br>
-        <i class="fa fa-linkedin w3-hover-text-black w3-xlarge w3-margin-right" aria-hidden="true" ></i>  Linkedin: <a href = "https://www.linkedin.com/in/andylow1704/"> https://www.linkedin.com/in/andylow1704/</a>
-
-      </div>
-      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+    <header id="main-header">
+      <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#">
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+            <i class="fas fa-align-right text-light"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="mr-auto"></div>
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#main-header"
+                  >HOME <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#main-about">ABOUT ME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#main-project">PROJECTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#main-contact">CONTACT ME</a>
+              </li>
+            </ul>
           </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+        </nav>
+      </div>
+      <div class="container text-left header-ctr">
+        <div class="row d-flex align-items-center">
+          <div class="col-md-7 col-sm-12 header-text">
+            <h2>
+              #
+              <a
+                class="typewrite"
+                data-period="2000"
+                data-type='[ "Data Science","Artifical Intelligence","Machine Learning" ]'
+              >
+                <span class="wrap"></span>
+              </a>
+            </h2>
+
+            <h1>Hello world!👋  &mdash; My name is <span>Andy</span>, I'm an <span>aspiring Data Scientist</span> 👨🏻‍💻 located in Singapore.</h1>
+            <h5>
+              Welcome to my portofolio website where you can learn more about me!
+            </h5>
+
+            <div class="text-left">
+              <a
+                class="button btn btn-light px-5 py-1.5 sayhi"
+                href="mailto:andylow1704@gmail.com?Subject=Hello%20Andy"
+                target="_top"
+                >Say Hi!</a
+              >
+            </div>
+            <br />
+          </div>
+          <div class="col-md-5 col-sm-12 main-img h-25">
+            <img src="assets/photo.jpg" alt="mac" />
           </div>
         </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-        <button class="w3-button w3-black w3-right w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
+      </div>
+    </header>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
- 
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+    <main id="main-screen">
+      <section id="main-about" class="section-2">
+        <div class="row">
+            <div class="column">
+             
+                <h1><b>About Me</b></h1>
+                <!-- <h3>Andy Low</h3> -->
+                <p>
+                  I am passionate for Data Science and plan to pursue work in the Data Science field in the future. Due to my passion, I have embarked on several internships related to Data Science. My goal is to pursue a Masters degree related to Data Science or Artificial Intelligence in the near future. 
+                </p>
+                <h2><b>SKILLS</b></h2>
+                  <p class="w3-large">Python, R, SQL, TensorFlow/Keras</p>
+                  <div class="w3-light-grey">
+                    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+                  </div>
+                  <br>
+                  <p class="w3-large"> Java, JavaScript, HTML, CSS, NOSQL, Hadoop, Spark, Linux</p>
+                  <div class="w3-light-grey">
+                    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:50%">50%</div>
+                  </div>
+                  <br>
+                  <p class="w3-large"> MATLAB, C++</p>
+                  <div class="w3-light-grey">
+                    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:30%">30%</div>
+                  </div>
+                <p>
+           
+            </div>
+            <div class="column">
+    
+                <h2><b>Work Experiences</b></h2>
+                <b class="company">Motional</b>
+                <p style="float:left">Software Development Intern </p>
+                <p style="float:right">Jan 2022 - May 2022</p>
 
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-}
+                <b class="company">Unilever</b>
+                <p style="float:left">Data Science Intern </p>
+                <p style="float:right">Aug 2021 - Dec 2021</p>
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
+                <b class="company">Infineon Technologies</b>
+                <p style="float:left">Machine Learning Intern </p>
+                <p style="float:right">May 2021 - Aug 2021</p>
 
-</body>
+                <b class="company">Infocomm Media Development Authority(IMDA)</b> 
+                <p style="float:left">Machine Learning Intern </p>
+                <p style="float:right"> Nov 2020 - Feb 2021</p>
+                
+                <b class="company">Lazada</b> 
+                <p style="float:left">Data Analyst Intern </p>
+                <p style="float:right">Aug 2020 - Nov 2020</p>
+                <br><br><br> <p></p>
+                <h2><b>Education</b></h2>
+                <b class="company">National University of Singapore</b>
+                <p style="float:left">Economics & Business Analytics `(2nd Major)</p>
+                <p style="float:right"> July 2018 - May 2022</p>               
+            </div>
+          </div>
+      </section>
+
+      <section class="section-3 container-fluid p-0">
+        <div class="container-fluid text-center">
+          <div
+            class="numbers d-flex flex-md-row flex-wrap justify-content-center"
+          >
+            <div class="rect">
+              <!-- Will need to update -->
+              <h1>438</h1>
+              <a href="https://www.linkedin.com/in/andylow1704/"
+                ><p><i class="fab fa-linkedin"></i> Linkedin</p></a
+              >
+            </div>
+            <div class="rect">
+              <!-- Will need to update -->
+              <h1>18</h1>
+              <a href="https://github.com/andylow1704" target="_blank"
+                ><p><i class="fab fa-github"></i> Github</p></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="main-project" class="section-4">
+        <div class="container text-center">
+          <h1 class="text-dark">Past projects I have done</h1>
+          <h3 class="text-dark"><a href="https://github.com/andylow1704"> Github Link<a>👨🏻‍💻 </h3>
+          <p class="text-secondary"><a href="https://github.com/andylow1704"> <b>Stock Price Prediction using NLP</b></a></p>
+          <p class="text-secondary"><a href="https://github.com/andylow1704/Inflation_Forecasting"> <b>Time-Series Inflation Forecasting using Machine Learning</b></a></p>
+        </div>
+
+        <div class="cards">
+          <div class="d-flex flex-md-row flex-wrap justify-content-center">
+            <div
+              class="card mr-2 d-inline-block shadow-lg"
+              style="width: 40rem"
+            >
+              <img src="assets/BrainTumor.gif" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h4 class="card-title"><b>Brain Tumor Classification & Segmentation model</b></h4>
+                <p class="card-text">
+                  Achieved an accuracy of 99.39% for Classification Model and DICE Score of 0.8996 for Segmentation Model. Also added a Flask Implementation.
+                </p>
+              </div>
+              <div class="card-body">
+                <a
+                  href="https://github.com/andylow1704/BrainTumorDetection"
+                  target="_blank"
+                  class="card-link"
+                  >Click here to view the project</a
+                >
+              </div>
+            </div>
+            <div
+              class="card mr-2 d-inline-block shadow-lg"
+              style="width: 40rem"
+            >
+              <img
+                src="assets/CovidTracker.gif"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h4 class="card-title"><br><b>Covid Travel Tracker Application</b></h4>
+                <p class="card-text">Covid Tracker application to track country's travel covid statistics using Amadeus API</p>
+              </div>
+              <div class="card-body">
+                <a href="https://github.com/andylow1704/CovidTravelTracker" class="card-link">Click here to view the project</a>
+              </div>
+            </div>
+            <div
+              class="card mr-2 d-inline-block shadow-lg"
+              style="width: 40rem"
+            >
+              <img
+                src="assets/Adversarial.gif"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h4 class="card-title"><b><br><br>Advesarial Attack in Image Classification & Object Detection</b></h4>
+                <p class="card-text"> A research article about different types of adversarial attacks on Image Classification model and Object Detection Model.</p>
+              </div>
+              <div class="card-body">
+                <a href="https://github.com/andylow1704/Adversarial" class="card-link">Click here to view the project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="main-contact" class="section-5">
+        <div class="contact">
+          <div class="form-container">
+            <h2>Contact Me</h2>
+            <form
+              method="POST"
+              action="https://formspree.io/andylow17040@gmail.com"
+            >
+              <div class="input-field">
+                <input type="text" name="name" required="" />
+                <label>Name*</label>
+              </div>
+              <div class="input-field">
+                <input type="email" name="email" required="" />
+                <label>Email*</label>
+              </div>
+              <div class="input-field">
+                <textarea name="message" rows="5" required=""></textarea>
+                <label>Message*</label>
+              </div>
+              <input type="submit" name="" value="Send Message" class="btn" />
+            </form>
+          </div>
+        </div>
+        <div class="quote">
+          <h4>
+            Stay Hungry. Stay Foolish.
+            <br />
+            <br /><b>- Steve Jobs </b>
+          </h4>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container-fluid p-0">
+        <div class="row text-left">
+          <div class="col-md-9">
+            <h4 class="text-light">Thank you</h4>
+            <p class="text-muted">For any questions or suggestions you can drop me an email</p>
+            <p class="gmail">@ andylow1704@gmail.com</p>
+          </div>
+          <div class="col-md-3 follow">
+            <h4 class="text-light">Follow Me</h4>
+            <p class="text-muted">Feel free to connect with me</p>
+            <div class="column text-light">
+              <a href="https://github.com/andylow1704" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/andylow1704/" target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/main.js"></script>
+  </body>
 </html>
