@@ -113,21 +113,6 @@ header .btn {
   transition: 1s;
 }
 
-.section-1 .screen:nth-child(1) {
-  background: url(../assets/first.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.section-1 .screen:nth-child(2) {
-  background: url(../assets/second.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.section-1 .screen:nth-child(3) {
-  background: url(../assets/third.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-}
 .section-1 .screen:hover {
   flex-grow: 5;
   opacity: 1;
